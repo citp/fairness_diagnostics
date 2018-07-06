@@ -1,7 +1,7 @@
 {
-  "name": "fairness_disgnostics",
-  "version": "1.0.0",
-  "description": "",
+  "name": "fairness-diagnostics",
+  "version": "0.0.0",
+  "description": "Machine learning fairness diagnostics",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,21 @@
     "type": "git",
     "url": "git+https://github.com/citp/fairness_diagnostics.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "machine-learning"
+  ],
+  "author": "Arunesh Mathur",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/citp/fairness_diagnostics/issues"
   },
-  "homepage": "https://github.com/citp/fairness_diagnostics#readme"
+  "homepage": "https://github.com/citp/fairness_diagnostics#readme",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "bower": "^1.8.4",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+  }
 }
