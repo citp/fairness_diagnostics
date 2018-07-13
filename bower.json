@@ -1,7 +1,7 @@
 {
   "name": "fairness-diagnostics",
   "description": "Machine learning fairness diagnostics",
-  "main": "index.js",
+  "main": "app.js",
   "authors": [
     "Arunesh Mathur"
   ],
@@ -20,6 +20,12 @@
   ],
   "dependencies": {
     "d3": "^5.5.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.1.1",
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2",
+    "angular-loader": "^1.7.2",
+    "bootstrap-select": "^1.13.1",
+    "popper.js": "^1.14.3"
   }
 }

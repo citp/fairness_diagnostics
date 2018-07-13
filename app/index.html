@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fairnessDiagnosticsApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fairness Diagnostics Visualization Tool</title>
+
+    <!-- Bootstrap Select CSS-->
+    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div class="container-fluid" ng-controller="TabsController">
+
+      <h1 class="my-4">Fairness Diagnostics</h1>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-2">
+
+          <div class="col-sm">
+            <label class="font-weight-bold">Data File</label>
+            <select class="selectpicker form-control">
+              <option ng-repeat="file in data_files">
+                {{ file.file_name }}
+              </option>
+            </select>
+          </div>
+
+          <div class="col-sm">
+            <label class="font-weight-bold">Score Attribute</label>
+            <select class="selectpicker form-control">
+              <option>Mustard</option>
+              <option>Ketchup</option>
+              <option>Relish</option>
+            </select>
+          </div>
+
+          <div class="col-sm">
+            <label class="font-weight-bold">Group Attribute</label>
+            <select class="selectpicker form-control">
+              <option>Mustard</option>
+              <option>Ketchup</option>
+              <option>Relish</option>
+            </select>
+          </div>
+
+          <div class="col-sm">
+            <label class="font-weight-bold">Outcome Attribute</label>
+            <select class="selectpicker form-control">
+              <option>Mustard</option>
+              <option>Ketchup</option>
+              <option>Relish</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="col-sm">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" ng-repeat="tab in tabs">
+              <a href="{{ tab.link }}" ng-click="setSelectedTab(tab)" ng-class="tabClass(tab)" class="nav-link" data-toggle="tab">{{ tab.label }}</a>
+            </li>
+          </ul>
+
+          <div ng-view></div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <!--div class="col-sm-12">
+          Data row
+        </div-->
+      </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Popper.js -->
+    <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Angular -->
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- Angular Route -->
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- Bootstrap Select -->
+    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <!-- utils.js -->
+    <script src="utils.js"></script>
+    <!-- app.js -->
+    <script src="app.js"></script>
+    <!-- Group View JS -->
+    <script src="group_view/view.js"></script>
+    <!-- Individual View JS -->
+    <script src="individual_view/view.js"></script>
+
+  </body>
+</html>
