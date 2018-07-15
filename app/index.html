@@ -27,40 +27,27 @@
 
           <div class="col-sm">
             <label class="font-weight-bold">Data File</label>
-            <select class="selectpicker form-control">
-              <option ng-repeat="file in data_files">
-                {{ file.file_name }}
-              </option>
+            <select ng-change="updateFile()" ng-model="selectedDataFile" class="form-control" ng-options="obj.file_display_name for obj in dataFiles">
             </select>
           </div>
 
           <div class="col-sm">
             <label class="font-weight-bold">Score Attribute</label>
-            <select class="selectpicker form-control">
-              <option>Mustard</option>
-              <option>Ketchup</option>
-              <option>Relish</option>
+            <select ng-model="selectedScoreAttribute" class="form-control" ng-options="obj.score_attribute_name for obj in scoreAttributes">
             </select>
           </div>
 
           <div class="col-sm">
             <label class="font-weight-bold">Group Attribute</label>
-            <select class="selectpicker form-control">
-              <option>Mustard</option>
-              <option>Ketchup</option>
-              <option>Relish</option>
+            <select ng-model="selectedGroupAttribute" class="form-control" ng-options="obj.group_attribute_name for obj in groupAttributes">
             </select>
           </div>
 
           <div class="col-sm">
             <label class="font-weight-bold">Outcome Attribute</label>
-            <select class="selectpicker form-control">
-              <option>Mustard</option>
-              <option>Ketchup</option>
-              <option>Relish</option>
+            <select ng-model="selectedOutcomeAttribute" class="form-control" ng-options="obj.outcome_attribute_name for obj in outcomeAttributes">
             </select>
           </div>
-
         </div>
 
         <div class="col-sm">
@@ -86,16 +73,12 @@
 
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Popper.js -->
-    <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Angular -->
     <script src="bower_components/angular/angular.js"></script>
     <!-- Angular Route -->
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <!-- Bootstrap Select -->
-    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <!-- utils.js -->
     <script src="utils.js"></script>
     <!-- app.js -->

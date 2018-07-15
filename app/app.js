@@ -25,8 +25,22 @@ fairnessDiagnosticsApp.controller('TabsController', function TabsController($sco
     }
 
     $http.get('data_config.json').then(function (data) {
-        $scope.data_files = data_parser.get_data_files(data);
+        $scope.dataSource = DataSource(data.data);
+        $scope.dataFiles = $scope.dataSource.get_data_files();
+        $scope.selectedDataFile = $scope.dataFiles[0];
+        $scope.updateFile();
     });
+
+    $scope.updateFile = function() {
+        $scope.scoreAttributes = $scope.dataSource.get_score_attributes($scope.selectedDataFile);
+        $scope.selectedScoreAttribute = $scope.scoreAttributes[0];
+
+        $scope.groupAttributes = $scope.dataSource.get_group_attributes($scope.selectedDataFile);
+        $scope.selectedGroupAttribute = $scope.groupAttributes[0];
+
+        $scope.outcomeAttributes = $scope.dataSource.get_outcome_attributes($scope.selectedDataFile);
+        $scope.selectedOutcomeAttribute = $scope.outcomeAttributes[0];
+    }
 
 });
 

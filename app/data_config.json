@@ -4,7 +4,12 @@
       "file_path": "data/compas.csv",
       "score_attributes": [
         {
-          "score_attribute_name": "score",
+          "score_attribute_name": "score_1",
+          "score_attribute_start": 0,
+          "score_attribute_end": 11
+        },
+        {
+          "score_attribute_name": "score_2",
           "score_attribute_start": 0,
           "score_attribute_end": 11
         }
@@ -24,6 +29,35 @@
     },
 
     {
-      "file_display_name": "data.csv"
+      "file_display_name": "data.csv",
+      "file_path": "data/data.csv",
+      "score_attributes": [
+        {
+          "score_attribute_name": "score_3",
+          "score_attribute_start": 0,
+          "score_attribute_end": 11
+        },
+        {
+          "score_attribute_name": "score_4",
+          "score_attribute_start": 0,
+          "score_attribute_end": 11
+        }
+      ],
+      "group_attributes": [
+        {
+          "group_attribute_name": "group",
+          "first_group_value": "group1"
+        },
+        {
+          "group_attribute_name": "group2",
+          "first_group_value": "group1"
+        }
+      ],
+      "outcome_attributes": [
+        {
+          "outcome_attribute_name": "outcome1",
+          "positive_outcome_value": "True"
+        }
+      ]
     }
   ]

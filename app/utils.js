@@ -1,37 +1,39 @@
-var data_parser = (function () {
+function DataSource(json_data) {
 
-    var data_files
+    var result = {};
 
-    return {
-        get_data_files: function(json_data) {
+    var _json_data_length = json_data.length;
+    var _data_files = [];
+    var _score_attributes = {};
+    var _group_attributes = {};
+    var _outcome_attributes = {};
 
-            var array = json_data.data;
+    for (var i = 0; i < _json_data_length; i++) {
+        _data_files.push({ 'file_display_name': json_data[i]['file_display_name'],
+                           'file_path': json_data[i]['file_path']
+                        });
 
-            var result = [];
-            var arrayLength = array.length;
-            for (var i = 0; i < arrayLength; i++) {
-                result.push({ 'file_name': array[i]['file_display_name'] });
-            }
+        _score_attributes[json_data[i]['file_display_name']] = json_data[i].score_attributes;
+        _group_attributes[json_data[i]['file_display_name']] = json_data[i].group_attributes;
+        _outcome_attributes[json_data[i]['file_display_name']] = json_data[i].outcome_attributes;
+    }
 
-            return result;
-        }
-    };
+    result.get_data_files = function() {
+        return _data_files;
+    }
 
-})();
+    result.get_score_attributes = function(data_file) {
+        return _score_attributes[data_file.file_display_name];
+    }
 
+    result.get_group_attributes = function(data_file) {
+        return _group_attributes[data_file.file_display_name];
+    }
 
+    result.get_outcome_attributes = function(data_file) {
+        return _outcome_attributes[data_file.file_display_name];
+    }
 
-// Parse the JSON data
-// fd_data: Fairness Diagnostics data
-//function fd_data(json_data_format) {
+    return result;
 
-   //var obj = JSON.parse(json_data_format);
-
-   //this.file_name = obj.file_display_name;
-   //this.file_path = obj.file_path;
-
-   //this.score_attribute_list = obj.score_attributes;
-   //this.group_attribute_list = obj.group_attributes;
-   //this.outcome_attribute_list = obj.outcome_attributes;
-   //this.x_vars_list = obj.x_vars_list;
-//}
+}

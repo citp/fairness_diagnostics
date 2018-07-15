@@ -25,7 +25,5 @@
     "angular": "^1.7.2",
     "angular-route": "^1.7.2",
     "angular-loader": "^1.7.2",
-    "bootstrap-select": "^1.13.1",
-    "popper.js": "^1.14.3"
   }
 }
