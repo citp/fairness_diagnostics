@@ -7,6 +7,7 @@ function DataSource(json_data) {
     var _score_attributes = {};
     var _group_attributes = {};
     var _outcome_attributes = {};
+    var _predictors = {};
 
     for (var i = 0; i < _json_data_length; i++) {
         _data_files.push({ 'file_display_name': json_data[i]['file_display_name'],
@@ -16,6 +17,7 @@ function DataSource(json_data) {
         _score_attributes[json_data[i]['file_display_name']] = json_data[i].score_attributes;
         _group_attributes[json_data[i]['file_display_name']] = json_data[i].group_attributes;
         _outcome_attributes[json_data[i]['file_display_name']] = json_data[i].outcome_attributes;
+        _predictors[json_data[i]['file_display_name']] = json_data[i].predictors;
     }
 
     result.get_data_files = function() {
@@ -32,6 +34,10 @@ function DataSource(json_data) {
 
     result.get_outcome_attributes = function(data_file) {
         return _outcome_attributes[data_file.file_display_name];
+    }
+
+    result.get_predictors = function(data_file) {
+        return _predictors[data_file.file_display_name];
     }
 
     return result;

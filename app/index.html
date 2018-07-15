@@ -7,9 +7,6 @@
 
     <title>Fairness Diagnostics Visualization Tool</title>
 
-    <!-- Bootstrap Select CSS-->
-    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css">
-
     <!-- Bootstrap CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   </head>
@@ -31,11 +28,15 @@
             </select>
           </div>
 
+          <hr />
+
           <div class="col-sm">
             <label class="font-weight-bold">Score Attribute</label>
             <select ng-model="selectedScoreAttribute" class="form-control" ng-options="obj.score_attribute_name for obj in scoreAttributes">
             </select>
           </div>
+
+          <hr />
 
           <div class="col-sm">
             <label class="font-weight-bold">Group Attribute</label>
@@ -43,11 +44,25 @@
             </select>
           </div>
 
+          <hr />
+
           <div class="col-sm">
             <label class="font-weight-bold">Outcome Attribute</label>
             <select ng-model="selectedOutcomeAttribute" class="form-control" ng-options="obj.outcome_attribute_name for obj in outcomeAttributes">
             </select>
           </div>
+
+          <hr />
+
+          <div class="col-sm">
+            <label class="font-weight-bold">Predictors</label>
+            <ul>
+              <li ng-repeat="preds in predictors">
+                {{ preds }}
+              </li>
+            </ul>
+          </div>
+
         </div>
 
         <div class="col-sm">

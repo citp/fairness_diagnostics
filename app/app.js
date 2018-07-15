@@ -40,6 +40,8 @@ fairnessDiagnosticsApp.controller('TabsController', function TabsController($sco
 
         $scope.outcomeAttributes = $scope.dataSource.get_outcome_attributes($scope.selectedDataFile);
         $scope.selectedOutcomeAttribute = $scope.outcomeAttributes[0];
+
+        $scope.predictors = $scope.dataSource.get_predictors($scope.selectedDataFile);
     }
 
 });
