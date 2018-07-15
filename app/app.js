@@ -6,6 +6,10 @@ fairnessDiagnosticsApp.controller('TabsController', function TabsController($sco
             label: 'Group Fairness'
         },
         {
+            link: '#!/cond-group',
+            label: 'Conditional Group Fairness'
+        },
+        {
             link: '#!/individual',
             label: 'Individual Fairness'
         }
@@ -57,6 +61,11 @@ fairnessDiagnosticsApp.config(['$routeProvider', '$locationProvider', function($
     when('/individual', {
         templateUrl: 'individual_view/view.html',
         controller: 'IndividualViewController'
+    }).
+    when('/cond-group', {
+        templateUrl: 'conditional_group_view/view.html',
+        controller: 'CondGroupViewController'
+
     }).
     otherwise({
         redirectTo: '/group'
